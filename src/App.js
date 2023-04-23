@@ -5,10 +5,8 @@ import { useContext } from "react";
 import Home from "./routes/home/home.component";
 import Navigation from "./routes/navigation/navigation.component";
 import Authentication from "./routes/authentication/authentication.component";
-
-const Shop = () => {
-  return <h1>I am the shop page</h1>;
-};
+import Shop from "./routes/shop/shop.component.jsx";
+import Checkout from "./routes/checkout/checkout.component";
 
 const App = () => {
   const { currentUser } = useContext(UserContext);
@@ -23,6 +21,7 @@ const App = () => {
             currentUser ? <Navigate to="/" replace /> : <Authentication />
           }
         />
+        <Route path="checkout" element={<Checkout />} />
       </Route>
     </Routes>
   );
